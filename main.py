@@ -1,24 +1,94 @@
+bulbasaur = {
+    "name": "Bulbasaur",
+    "hp": 100,
+    "type": "grass",
+    "moves": [
+        {
+            "name": "Vine Whip",
+            "type": "grass",
+            "damage": 15
+        },
+        {
+            "name": "Tackle",
+            "type": "normal",
+            "damage": 10
+        }
+    ]
+}
+
+charmander = {
+    "name": "Charmander",
+    "hp": 100,
+    "type": "fire",
+    "moves": [
+        {
+
+        "name": "Ember",
+        "type": "fire",
+        "damage": 15
+
+    },
+    {
+        "name": "Scratch",
+        "type": "normal",
+        "damage": 10
+    }
+
+    ]
+}
+
+squirtle = {
+    "name": "Squirtle",
+    "hp": 100,
+    "type": "water",
+
+    "moves": [ {
+            "name": "Water Gun",
+            "type": "water",
+            "damage": 15
+        },
+        {
+            "name": "Tackle",
+            "type": "normal",
+            "damage": 10
+        }]
+}
+
+
+
+
 print("POKEMON BATTLE ARENA")
 
-opcoes_iniciais = ["Bulbasaur", "Charmander", "Squirtle"]
-for i in range(0,len(opcoes_iniciais)):
-    print(i + 1, opcoes_iniciais[i])
+starter_options = ["Bulbasaur", "Charmander", "Squirtle"]
 
-escolha_inicial = int(input("Selecione seu inicial! \n 1 = Bulbasaur \n 2 = Charmander \n 3 = Squirtle"))
-escolha_inicial -= 1
+for i in range(0, len(starter_options)):
+    print(i + 1, starter_options[i])
 
-while escolha_inicial < 1 or escolha_inicial > 3:
-    print("Opção inválida!")
-    escolha_inicial = int(input("Selecione novamente: "))
-    
-if escolha_inicial == 0:
-    print("Vamos lá, Bulbasaur!")
-elif escolha_inicial == 1:
-    print("Vamos lá, Charmander!")
-elif escolha_inicial == 2:
-    print("Vamos lá, Squirtle!")
-else:
-    print("Opção inválida!")
+starter_choice = int(input(
+    "Choose your starter!\n"
+    "1 = Bulbasaur\n"
+    "2 = Charmander\n"
+    "3 = Squirtle\n"
+))
 
-      
+while starter_choice < 1 or starter_choice > 3:
+    print("Invalid option!")
+    starter_choice = int(input("Choose again: "))
+
+starter_choice -= 1
+
+if starter_choice == 0:
+    player_pokemon = bulbasaur
+    print("Let's go, Bulbasaur!")
+
+elif starter_choice == 1:
+    player_pokemon = charmander
+    print("Let's go, Charmander!")
+
+elif starter_choice == 2:
+    player_pokemon = squirtle
+    print("Let's go, Squirtle!")
+
+
+
     
