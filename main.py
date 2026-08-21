@@ -92,9 +92,16 @@ elif starter_choice == 2:
 for i in range(0, len(player_pokemon["moves"])):
     print(i + 1,player_pokemon["moves"][i]["name"])
 
-move_choice = input("Choose your move:")
-if move_choice == 1:
-    print(player_pokemon["moves"], move_choice[i] - 1)
+move_choice = int(input("Choose your move:"))
+while move_choice < 1 or move_choice > 2:
+    print("Invalid option!")
+    move_choice = int(input("Choose your move:"))
+
+move_choice -= 1
+    
+
+selected_move = player_pokemon["moves"][move_choice]
+print(f"{player_pokemon["name"]} used {selected_move["name"]}!")
 
 
 
