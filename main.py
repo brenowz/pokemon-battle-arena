@@ -54,9 +54,6 @@ squirtle = {
         }]
 }
 
-
-
-
 print("POKEMON BATTLE ARENA")
 
 starter_options = ["Bulbasaur", "Charmander", "Squirtle"]
@@ -80,14 +77,24 @@ starter_choice -= 1
 if starter_choice == 0:
     player_pokemon = bulbasaur
     print("Let's go, Bulbasaur!")
+    
 
 elif starter_choice == 1:
     player_pokemon = charmander
     print("Let's go, Charmander!")
+    
 
 elif starter_choice == 2:
     player_pokemon = squirtle
     print("Let's go, Squirtle!")
+    
+
+for i in range(0, len(player_pokemon["moves"])):
+    print(i + 1,player_pokemon["moves"][i]["name"])
+
+move_choice = input("Choose your move:")
+if move_choice == 1:
+    print(player_pokemon["moves"], move_choice[i] - 1)
 
 
 
