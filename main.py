@@ -1,3 +1,5 @@
+import random
+
 bulbasaur = {
     "name": "Bulbasaur",
     "hp": 100,
@@ -54,6 +56,8 @@ squirtle = {
         }]
 }
 
+pokemons = [bulbasaur, charmander, squirtle]
+
 print("POKEMON BATTLE ARENA")
 
 starter_options = ["Bulbasaur", "Charmander", "Squirtle"]
@@ -103,6 +107,21 @@ move_choice -= 1
 selected_move = player_pokemon["moves"][move_choice]
 print(f"{player_pokemon["name"]} used {selected_move["name"]}!")
 
+enemy_option = []
+
+for pokemon in pokemons:
+    if pokemon != player_pokemon:
+        enemy_option.append(pokemon)
+
+enemy_pokemon = random.choice(enemy_option)
+
+print(f"A Wild {enemy_pokemon["name"]} appeared!")
+
+enemy_pokemon["hp"] -= selected_move["damage"]
+
+print(f"{player_pokemon['name']} used {selected_move['name']}!")
+print(f"{enemy_pokemon['name']} took {selected_move['damage']} damage!")
+print(f"{enemy_pokemon['name']} HP: {enemy_pokemon['hp']}")
 
 
     
